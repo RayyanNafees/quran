@@ -1,0 +1,26 @@
+{
+  "name": "quran",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^0.19.1",
+    "@astrojs/prefetch": "^0.2.1",
+    "@astrojs/solid-js": "^2.1.1",
+    "@astrojs/vercel": "^3.3.0",
+    "astro": "^2.4.1",
+    "astro-icon": "^0.8.0",
+    "astro-seo": "^0.7.2",
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
+    "nanostores": "^0.8.1",
+    "solid-js": "^1.4.3"
+  },
+  "devDependencies": {}
+}
