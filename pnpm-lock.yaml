@@ -13,6 +13,12 @@ dependencies:
   '@astrojs/vercel':
     specifier: ^3.3.0
     version: 3.3.0(astro@2.4.1)(react@18.2.0)
+  '@trpc/client':
+    specifier: ^10.25.0
+    version: 10.25.0(@trpc/server@10.25.0)
+  '@trpc/server':
+    specifier: ^10.25.0
+    version: 10.25.0
   astro:
     specifier: ^2.4.1
     version: 2.4.1
@@ -28,12 +34,18 @@ dependencies:
   cssnano:
     specifier: ^6.0.1
     version: 6.0.1(postcss@8.4.23)
+  js-cookie:
+    specifier: ^3.0.5
+    version: 3.0.5
   nanostores:
     specifier: ^0.8.1
     version: 0.8.1
   solid-js:
     specifier: ^1.4.3
     version: 1.7.5
+  zod:
+    specifier: ^3.21.4
+    version: 3.21.4
 
 packages:
 
@@ -786,6 +798,18 @@ packages:
       estree-walker: 2.0.2
       picomatch: 2.3.1
       rollup: 3.21.5
+    dev: false
+
+  /@trpc/client@10.25.0(@trpc/server@10.25.0):
+    resolution: {integrity: sha512-XWuzbbACX2fzB9UHVkPJtaaAeFiyPjQSC3YgnRtDwjQx03/nt7OsxTBxvG0kblCN0Z2zZrnLF65aDrMJEP43LQ==}
+    peerDependencies:
+      '@trpc/server': 10.25.0
+    dependencies:
+      '@trpc/server': 10.25.0
+    dev: false
+
+  /@trpc/server@10.25.0:
+    resolution: {integrity: sha512-OKcGw2iZMUV8zCHoS+uLYGVq2tbZhhK0TPbb0pGhT+KTN8oWYPG+oYpTe9He9J1A2y8qcRAoy5u1zdiUUOiFEg==}
     dev: false
 
   /@trysound/sax@0.2.0:
@@ -2394,6 +2418,11 @@ packages:
 
   /isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
+    dev: false
+
+  /js-cookie@3.0.5:
+    resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
+    engines: {node: '>=14'}
     dev: false
 
   /js-tokens@4.0.0:

@@ -14,13 +14,16 @@
     "@astrojs/prefetch": "^0.2.1",
     "@astrojs/solid-js": "^2.1.1",
     "@astrojs/vercel": "^3.3.0",
+    "@trpc/client": "^10.25.0",
+    "@trpc/server": "^10.25.0",
     "astro": "^2.4.1",
     "astro-icon": "^0.8.0",
     "astro-seo": "^0.7.2",
     "autoprefixer": "^10.4.14",
     "cssnano": "^6.0.1",
+    "js-cookie": "^3.0.5",
     "nanostores": "^0.8.1",
-    "solid-js": "^1.4.3"
-  },
-  "devDependencies": {}
+    "solid-js": "^1.4.3",
+    "zod": "^3.21.4"
+  }
 }

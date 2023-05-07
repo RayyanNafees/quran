@@ -1,0 +1,8 @@
+---
+import { caller } from "./api/trpc/[trpc]";
+
+const user = await caller(Astro.request, {session:'Rayyan'}).user('John Doe')
+---
+
+<div>Hello {user.name}!</div>
+ 
