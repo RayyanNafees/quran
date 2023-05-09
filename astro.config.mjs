@@ -5,14 +5,17 @@ import mdx from "@astrojs/mdx";
 //import UnoCSS from 'unocss/astro';
 
 import prefetch from "@astrojs/prefetch";
+import image from "@astrojs/image";
+
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
   output: "server",
   adapter: vercel(),
-  integrations: [solidJs(), mdx(), 
+  integrations: [solidJs(), mdx(),
   //UnoCSS({
-    // injectReset: true
+  // injectReset: true
   //}),
-   prefetch()]
+  prefetch(), image(), sitemap()]
 });

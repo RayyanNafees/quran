@@ -1,0 +1,29 @@
+---
+
+const { counter, add } = await import('../store');
+---
+ <astro viewport="{true}">
+  <head>
+    <title>My Astro Template</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-sm-3">
+        <a href="/page1" class="btn btn-primary">Page 1</a>
+      </div>
+      <div class="col-sm-3">
+        <a href="/page2" class="btn btn-secondary">Page 2</a>
+      </div>
+      <div class="col-sm-3">
+        <a href="/page3" class="btn btn-success">Page 3</a>
+      </div>
+    </div>
+    <div class="my-3">
+      <button class="btn btn-primary">Counter: {counter.get()}</button>
+    </div>
+    <!-- <script define:vars="{ add }">
+      const button = document.querySelector("button");
+      button.addEventListener("click", add);
+    </script> -->
+  </body>
+</astro>
