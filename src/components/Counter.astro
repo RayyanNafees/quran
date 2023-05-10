@@ -1,35 +1,46 @@
 ---
-import { counter } from "../store.ts";
+import { counter } from "../store";
+import Countshow from "./Countshow.tsx";
 ---
 
-<astro viewport="{true}">
-  <head>
-    <title>My Astro Template</title>
-  </head>
-  <body>
-    <div class="row">
-      <div class="col-sm-3">
-        <a href="/page1" class="btn btn-primary">Page 1</a>
-      </div>
-      <div class="col-sm-3">
-        <a href="/page2" class="btn btn-secondary">Page 2</a>
-      </div>
-      <div class="col-sm-3">
-        <a href="/page3" class="btn btn-success">Page 3</a>
-      </div>
+<nav class="bg-gray-800 text-white">
+  <div class="flex items-center justify-between px-4 py-2">
+    <div class="flex items-center">
+      <a href="/" class="text-white font-bold text-lg">My App</a>
     </div>
-    <div class="my-3">
-      <button class="btn btn-primary">Counter: {counter.get()}</button>
+    <div class="md:block hidden">
+      <ul class="flex items-center">
+        <li>
+          <a href="/page1" class="px-4 py-2 hover:bg-gray-700">Page 1</a>
+        </li>
+        <li>
+          <a href="/page2" class="px-4 py-2 hover:bg-gray-700">Page 2</a>
+        </li>
+        <li>
+          <a href="/page3" class="px-4 py-2 hover:bg-gray-700">Page 3</a>
+        </li>
+      </ul>
     </div>
-    <script>
-      import { add } from "../store.ts";
+  </div>
+</nav>
+<div class="my-3">
+  <button
+    id="btn"
+    class="p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold"
+  >
+    Counter: {counter.get()}
+  </button>
+</div>
+<script>
+  import { counter, add } from "../store.ts";
 
-      console.log("wow");
-
-      if (add) {
-        const button = document.querySelector("button");
-        button?.addEventListener("click", add);
-      }
-    </script>
-  </body>
-</astro>
+  const btn = document.getElementById("btn");
+  if (btn) {
+    btn?.addEventListener("click", () => {
+      add();
+    });
+    counter.listen((c) => {
+      btn.innerHTML = `Counter:  ${c}`;
+    });
+  }
+</script>

@@ -1,0 +1,10 @@
+---
+import Counter from "../components/Counter.astro";
+import Seol from "../layouts/Seol.astro";
+import Countshow from "../components/Countshow";
+---
+
+<Seol>
+  <Counter />
+  <Countshow client:load />
+</Seol>

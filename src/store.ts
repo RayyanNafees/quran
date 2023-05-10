@@ -1,11 +1,11 @@
-import { atom } from "nanostores";
+// store.ts
+import { action, atom } from "nanostores";
 
 export const counter = atom(0);
 
-export const add = () => {
-  console.log("Hello world");
+export const add = action(counter, "add", (store) => {
   counter.set(counter.get() + 1);
-  console.log(counter.get());
-};
+});
 
-
+// Use computed stores to create chains of reactive computations.
+// export const doubled = computed(counter, (current) => current * 2);

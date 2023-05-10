@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import vercel from "@astrojs/vercel/serverless";
 import solidJs from "@astrojs/solid-js";
 import mdx from "@astrojs/mdx";
-//import UnoCSS from 'unocss/astro';
+import UnoCSS from 'unocss/astro';
 
 import prefetch from "@astrojs/prefetch";
 import image from "@astrojs/image";
@@ -14,8 +14,8 @@ export default defineConfig({
   output: "server",
   adapter: vercel(),
   integrations: [solidJs(), mdx(),
-  //UnoCSS({
+  UnoCSS({
   // injectReset: true
-  //}),
+  }),
   prefetch(), image(), sitemap()]
 });
