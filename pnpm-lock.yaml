@@ -19,6 +19,9 @@ dependencies:
   '@astrojs/vercel':
     specifier: ^3.3.0
     version: 3.3.0(astro@2.4.1)(react@18.2.0)
+  '@nanostores/persistent':
+    specifier: ^0.8.0
+    version: 0.8.0(nanostores@0.8.1)
   '@nanostores/solid':
     specifier: ^0.3.2
     version: 0.3.2(nanostores@0.8.1)(solid-js@1.7.5)
@@ -40,9 +43,15 @@ dependencies:
   autoprefixer:
     specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.23)
+  crypto-js:
+    specifier: ^4.1.1
+    version: 4.1.1
   cssnano:
     specifier: ^6.0.1
     version: 6.0.1(postcss@8.4.23)
+  dotenv:
+    specifier: ^16.0.3
+    version: 16.0.3
   js-cookie:
     specifier: ^3.0.5
     version: 3.0.5
@@ -52,17 +61,11 @@ dependencies:
   solid-js:
     specifier: ^1.4.3
     version: 1.7.5
-  umbrellajs:
-    specifier: ^3.3.1
-    version: 3.3.1
-  zod:
-    specifier: ^3.21.4
-    version: 3.21.4
 
 devDependencies:
-  '@types/jquery':
-    specifier: ^3.5.16
-    version: 3.5.16
+  '@types/crypto-js':
+    specifier: ^4.1.1
+    version: 4.1.1
   unocss:
     specifier: ^0.51.12
     version: 0.51.12(postcss@8.4.23)(rollup@3.21.5)(vite@4.3.5)
@@ -796,6 +799,15 @@ packages:
       - supports-color
     dev: false
 
+  /@nanostores/persistent@0.8.0(nanostores@0.8.1):
+    resolution: {integrity: sha512-R9jfwdcC4CjRgAApOrqjOO0XYXqAMvGGK1L5ztPl9xAEtECSrE2BbEJcHqZULNf40/dFJbi2Qdu0zKSvvSNbEQ==}
+    engines: {node: ^16.0.0 || >=18.0.0}
+    peerDependencies:
+      nanostores: ^0.8.0
+    dependencies:
+      nanostores: 0.8.1
+    dev: false
+
   /@nanostores/solid@0.3.2(nanostores@0.8.1)(solid-js@1.7.5):
     resolution: {integrity: sha512-OH4m81Bls8NCH2ANzqEujPvzzzLlunm0e6Vpqy9mMgBYzOcqxWr3SrZgIVA7KhMsjftINwcpMN7/FKo2MQa1aQ==}
     peerDependencies:
@@ -914,6 +926,10 @@ packages:
       '@babel/types': 7.21.5
     dev: false
 
+  /@types/crypto-js@4.1.1:
+    resolution: {integrity: sha512-BG7fQKZ689HIoc5h+6D2Dgq1fABRa0RbBWKBd9SP/MVRVXROflpm5fhwyATX5duFmbStzyzyycPB8qUYKDH3NA==}
+    dev: true
+
   /@types/debug@4.1.7:
     resolution: {integrity: sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==}
     dependencies:
@@ -934,12 +950,6 @@ packages:
     dependencies:
       '@types/unist': 2.0.6
     dev: false
-
-  /@types/jquery@3.5.16:
-    resolution: {integrity: sha512-bsI7y4ZgeMkmpG9OM710RRzDFp+w4P1RGiIt30C1mSBT+ExCleeh4HObwgArnDFELmRrOpXgSYN9VF1hj+f1lw==}
-    dependencies:
-      '@types/sizzle': 2.3.3
-    dev: true
 
   /@types/json5@0.0.30:
     resolution: {integrity: sha512-sqm9g7mHlPY/43fcSNrCYfOeX9zkTTK+euO5E6+CVijSMm5tTjkVdwdqRkY3ljjIAf8679vps5jKUoJBCLsMDA==}
@@ -982,10 +992,6 @@ packages:
     dependencies:
       '@types/node': 17.0.45
     dev: false
-
-  /@types/sizzle@2.3.3:
-    resolution: {integrity: sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ==}
-    dev: true
 
   /@types/unist@2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
@@ -1750,6 +1756,10 @@ packages:
       shebang-command: 2.0.0
       which: 2.0.2
 
+  /crypto-js@4.1.1:
+    resolution: {integrity: sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==}
+    dev: false
+
   /css-declaration-sorter@6.4.0(postcss@8.4.23):
     resolution: {integrity: sha512-jDfsatwWMWN0MODAFuHszfjphEXfNw9JUAhmY4pLu3TyTU+ohUpsbVtbU+1MZn4a47D9kqh03i4eyOm+74+zew==}
     engines: {node: ^10 || ^12 || >=14}
@@ -2028,6 +2038,11 @@ packages:
       dom-serializer: 2.0.0
       domelementtype: 2.3.0
       domhandler: 5.0.3
+    dev: false
+
+  /dotenv@16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
     dev: false
 
   /dset@3.1.2:
@@ -4728,10 +4743,6 @@ packages:
   /ufo@1.1.2:
     resolution: {integrity: sha512-TrY6DsjTQQgyS3E3dBaOXf0TpPD8u9FVrVYmKVegJuFw51n/YB9XPt+U6ydzFG5ZIN7+DIjPbNmXoBj9esYhgQ==}
     dev: true
-
-  /umbrellajs@3.3.1:
-    resolution: {integrity: sha512-3Y4LVTFZWyXdSc7jSiJQziZJ77R2I9YwO5kaKZeHlXfH3clzG0TsHNMQrKNJqKDlWkORN8QEvqrVOKhjVUN6IQ==}
-    dev: false
 
   /unconfig@0.3.7:
     resolution: {integrity: sha512-1589b7oGa8ILBYpta7TndM5mLHLzHUqBfhszeZxuUBrjO/RoQ52VGVWsS3w0C0GLNxO9RPmqkf6BmIvBApaRdA==}

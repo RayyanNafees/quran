@@ -1,11 +1,26 @@
 // store.ts
 import { action, atom } from "nanostores";
+import { persistentAtom } from "@nanostores/persistent";
+import { encrypt, decrypt } from "./encryption";
 
-export const counter = atom(0);
+// Atom Store
+export const counterP = persistentAtom<number>("counter", 0,
+ {
+  encode: encrypt,
+  decode: decrypt,
+}
+);
 
-export const add = action(counter, "add", (store) => {
-  counter.set(counter.get() + 1);
+export const counterL = persistentAtom<number>("counter", 0,
+ {
+  encode: JSON.stringify,
+  decode: JSON.parse,
+}
+);
+
+export const counter = atom<number>(0);
+
+// Actions
+export const add = action(counterL, "add", (store) => {
+  store.set(store.get() + 1);
 });
-
-// Use computed stores to create chains of reactive computations.
-// export const doubled = computed(counter, (current) => current * 2);

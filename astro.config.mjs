@@ -6,8 +6,10 @@ import UnoCSS from 'unocss/astro';
 
 import prefetch from "@astrojs/prefetch";
 import image from "@astrojs/image";
-
 import sitemap from "@astrojs/sitemap";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // https://astro.build/config
 export default defineConfig({

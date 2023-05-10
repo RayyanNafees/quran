@@ -1,6 +1,5 @@
 ---
-import { counter } from "../store";
-import Countshow from "./Countshow.tsx";
+import {counterL as counter } from "../store";
 ---
 
 <nav class="bg-gray-800 text-white">
@@ -32,8 +31,8 @@ import Countshow from "./Countshow.tsx";
   </button>
 </div>
 <script>
-  import { counter, add } from "../store.ts";
-
+  import { counterL as counter, add } from "../store.ts";
+  add()
   const btn = document.getElementById("btn");
   if (btn) {
     btn?.addEventListener("click", () => {

@@ -1,4 +1,4 @@
-import { counter, add } from "../store";
+import { counterL as counter, add } from "../store";
 import { useStore } from "@nanostores/solid";
 import { createEffect } from "solid-js";
 

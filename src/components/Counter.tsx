@@ -1,8 +1,7 @@
 // import { createSignal, createEffect } from 'solid-js';
 import { useStore } from "@nanostores/solid";
-import { add, counter } from "../store";
+import { add, counterL as counter } from "../store";
 export default function Counter() {
-
   const store = useStore(counter);
 
   return (
@@ -36,7 +35,10 @@ export default function Counter() {
         </div>
       </nav>
       <div class="my-3">
-        <button class="p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold" onClick={add}>
+        <button
+          class="p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold"
+          onClick={add}
+        >
           Counter: {store()}
         </button>
       </div>
