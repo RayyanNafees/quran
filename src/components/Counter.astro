@@ -1,8 +1,8 @@
 ---
-
-const { counter, add } = await import('../store');
+import { counter } from "../store.ts";
 ---
- <astro viewport="{true}">
+
+<astro viewport="{true}">
   <head>
     <title>My Astro Template</title>
   </head>
@@ -21,9 +21,15 @@ const { counter, add } = await import('../store');
     <div class="my-3">
       <button class="btn btn-primary">Counter: {counter.get()}</button>
     </div>
-    <!-- <script define:vars="{ add }">
-      const button = document.querySelector("button");
-      button.addEventListener("click", add);
-    </script> -->
+    <script>
+      import { add } from "../store.ts";
+
+      console.log("wow");
+
+      if (add) {
+        const button = document.querySelector("button");
+        button?.addEventListener("click", add);
+      }
+    </script>
   </body>
 </astro>

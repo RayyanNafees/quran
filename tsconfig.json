@@ -3,6 +3,8 @@
   "compilerOptions": {
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "types": ["@astrojs/image/client"]
+    "types": ["@astrojs/image/client"],
+    "strict": true,
+    "allowImportingTsExtensions": true
   }
 }
