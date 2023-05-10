@@ -32,6 +32,7 @@
     "solid-js": "^1.4.3"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@types/crypto-js": "^4.1.1",
     "unocss": "^0.51.12"
   }
