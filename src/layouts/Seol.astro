@@ -1,5 +1,9 @@
 ---
 import { SEO } from "astro-seo";
+
+const title = "QuranX",
+descr = "An online Quran reading & learning platform",
+image = "https://cdn3.iconfinder.com/data/icons/ramadan-filled-outline-2/64/25-Quran-512.png"
 ---
 
 <html lang="en">
@@ -9,9 +13,9 @@ import { SEO } from "astro-seo";
       description="A heavily optimized description full of well-researched keywords."
       openGraph={{
         basic: {
-          title: "A Very Descriptive Title",
+          title,
           type: "A type.",
-          image: "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+          image,
         }
       }}
       twitter={{
@@ -24,10 +28,10 @@ import { SEO } from "astro-seo";
         meta: [
           {
             name: "twitter:image",
-            content: "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+            content: image,
           },
-          { name: "twitter:title", content: "Tinker Tailor Soldier Spy" },
-          { name: "twitter:description", content: "Agent" },
+          { name: "twitter:title", content: title },
+          { name: "twitter:description", content: descr },
         ],
       }}
     />
